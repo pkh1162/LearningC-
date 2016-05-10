@@ -44,7 +44,7 @@ dlldata.c
 project.lock.json
 artifacts/
 
-*.bin
+SimpleBlog/bin/*
 *_i.c
 *_p.c
 *_i.h
