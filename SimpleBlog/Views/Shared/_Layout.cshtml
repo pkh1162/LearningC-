@@ -26,7 +26,10 @@
             @Html.RouteLink("Blog", "BlogPage")    
         </h3>
     </header>
-    
+
+    <h4>
+        @RenderSection("Testing", false)
+    </h4>
     @RenderBody()
 
 </body>
