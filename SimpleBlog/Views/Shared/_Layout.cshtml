@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+    <header>
+        <h1>
+        <a href= "@Url.RouteUrl("HomePage")">
+            Home blog pages
+        </a>
+
+        </h1>
+
+        <h3>
+            @Html.RouteLink("Blog", "BlogPage")    
+        </h3>
+    </header>
+    
+    @RenderBody()
+
+</body>
+</html>
