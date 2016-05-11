@@ -59,10 +59,25 @@ namespace SimpleBlog
             defaults: new { controller = "Blog", action = "Index", id = UrlParameter.Optional },
             namespaces: nsControllersMain
             );
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            routes.MapRoute(
+            name: "Login",
+            url: "{controller}/{action}/{id}",
+            defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional },
+            namespaces: nsControllersMain
+            );
+
+            routes.MapRoute(
+            name: "LoginPage",
+            url: "Login/Index/{id}",
+            defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional },
+            namespaces: nsControllersMain
+            );
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         }
     }
