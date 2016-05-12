@@ -6,4 +6,9 @@
 
 
     <text>This is the admin page for the website...I think. (Index)</text>
+    <a href="@Url.Action("Index","Test", new { area = "admin" })">Test</a>
+    <a href="@Url.RouteUrl("adminHome", new {area = "admin" })">Admin Home</a>
+    <a href="@Url.RouteUrl("BlogPage")">Blog</a>
+    <a href="@Url.RouteUrl("HomePage")">Home</a>
+    <a href="@Url.RouteUrl("Logout")">Logout</a>
 

@@ -1,5 +1,5 @@
 ﻿
-@model SimpleBlog.ViewModels.LoginVM
+@model SimpleBlog.ViewModels.LoginIndex
 
 @{ 
     ViewBag.Title = "Login page";
@@ -9,6 +9,8 @@
 
 @using (Html.BeginForm())
 {
+    @Html.ValidationSummary()
+
     <div>
         @Html.LabelFor(x => x.UserName)
         @Html.EditorFor(x => x.UserName)

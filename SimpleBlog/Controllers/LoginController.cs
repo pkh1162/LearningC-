@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace SimpleBlog.Controllers
 {
@@ -12,23 +13,30 @@ namespace SimpleBlog.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            return View(new LoginVM());
+            return View();
         }
 
         [HttpPost]
-        public ActionResult Index(LoginVM form)
+        public ActionResult Index(LoginIndex form, string returnUrl)
         {
             if (ModelState.IsValid)
-                return Content(
-                    "Username and Password are valid: "
-                    + "   Username: " + form.UserName
-                    + ",   Password: " + form.Password
-                    );
+            {
+
+                FormsAuthentication.SetAuthCookie(form.UserName, true);
+
+                if (!string.IsNullOrWhiteSpace(returnUrl))
+                {
+                    return Redirect(returnUrl);
+                }
+                else
+                {
+                    return RedirectToRoute("HomePage");
+                }      
+            }
 
             else
             {
-                ModelState.Clear();
-                form = new LoginVM();
+                form = new LoginIndex();
                 return View(form);
             }
            

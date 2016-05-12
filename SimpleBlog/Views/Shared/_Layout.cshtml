@@ -22,6 +22,24 @@
 
         </h1>
 
+        <h2>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p>Welcome back, @User.Identity.Name</p>
+                <a href="@Url.RouteUrl("Logout")"> Logout</a>
+
+                if (User.IsInRole("admin"))
+                {
+                    <a href="@Url.Action("Index","Home", new { area = "admin" })">Views stuff in admin</a>
+                }
+
+            }
+            else
+            {
+                <a href="@Url.RouteUrl("LoginPage")"> Login</a>
+            }
+        </h2>
+
         <h3>
             @Html.RouteLink("Blog", "BlogPage")    
         </h3>

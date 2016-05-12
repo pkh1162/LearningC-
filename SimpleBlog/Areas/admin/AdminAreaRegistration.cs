@@ -16,6 +16,8 @@ namespace SimpleBlog.Areas.Admin
                 "admin/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
+
+            context.MapRoute("adminHome","admin/home/index");   //Just an example of easily giving a area route a name.
         }
     }
 }

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SimpleBlog.ViewModels
 {
-    public class LoginVM
+    public class LoginIndex
     {
         [Required]
         public string UserName { get; set; }

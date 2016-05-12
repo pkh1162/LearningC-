@@ -79,6 +79,16 @@ namespace SimpleBlog
             );
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+            routes.MapRoute(
+            name: "Logout",
+            url: "logout",
+            defaults: new { controller = "Logout", action = "Index", id = UrlParameter.Optional },
+            namespaces: nsControllersMain
+            );
+
+
+
+
         }
     }
 }
