@@ -1,4 +1,5 @@
-﻿
+﻿@using System.Web.Optimization
+
 @{
     Layout = null;
 }
@@ -11,14 +12,15 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/styles")
+
 </head>
 <body>
 
     <header>
         <h1>
-        <a href= "@Url.RouteUrl("HomePage")">
-            Home blog pages
-        </a>
+        <a href= "@Url.RouteUrl("HomePage")">Home blog pages</a>
 
         </h1>
 
@@ -50,5 +52,12 @@
     </h4>
     @RenderBody()
 
+    <footer>
+        <text>PKH1162</text>
+        <i class="glyphicon glyphicon-knight"></i>
+
+    </footer>
+
+    @Scripts.Render("~/scripts")
 </body>
 </html>
