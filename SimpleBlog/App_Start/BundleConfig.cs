@@ -12,7 +12,8 @@ namespace SimpleBlog.App_Start
         {
             bundles.Add(new StyleBundle("~/admin/styles")
                 .Include("~/content/styles/bootstrap.css")
-                .Include("~/content/styles/admin.css"));
+                .Include("~/content/styles/admin.css")
+                );
 
 
             bundles.Add(new StyleBundle("~/styles")
@@ -24,13 +25,16 @@ namespace SimpleBlog.App_Start
                 .Include("~/scripts/jquery-2.2.3.js")
                 .Include("~/scripts/jquery.validate.js")
                 .Include("~/scripts/jquery.validate.unobtrusive.js")
-                .Include("~/scripts/bootstrap.js"));
+                .Include("~/scripts/bootstrap.js")
+                .Include("~/areas/admin/Scripts/forms.js")
+                );
 
             bundles.Add(new ScriptBundle("~/scripts")
              .Include("~/scripts/jquery-2.2.3.js")
              .Include("~/scripts/jquery.validate.js")
              .Include("~/scripts/jquery.validate.unobtrusive.js")
-             .Include("~/scripts/bootstrap.js"));
+             .Include("~/scripts/bootstrap.js")
+             );
         }
 	}
 }

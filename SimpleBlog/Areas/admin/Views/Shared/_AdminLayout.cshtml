@@ -26,6 +26,9 @@
             <li class="@Extensions.SelectedTabHelper(ViewBag.SelectedTab, "home")">           
                 @Html.ActionLink("Admin Home", "Index", "Home", new { area = "admin" }, new { })
             </li>
+            <li class="@Extensions.SelectedTabHelper(ViewBag.selectedTab, "users")">
+                @Html.ActionLink("Users", "Index", "Users", new { area = "admin"}, new { } )
+            </li>
             <li>
                 @Html.RouteLink("Home", "HomePage")
             </li>
@@ -42,6 +45,7 @@
 
     </div>
     @Scripts.Render("~/admin/scripts")
+
 
 </body>
 </html>

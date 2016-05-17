@@ -22,7 +22,7 @@ namespace SimpleBlog.Controllers
             if (ModelState.IsValid)
             {
 
-                FormsAuthentication.SetAuthCookie(form.UserName, true);
+                FormsAuthentication.SetAuthCookie(form.Username, true);
 
                 if (!string.IsNullOrWhiteSpace(returnUrl))
                 {

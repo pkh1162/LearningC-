@@ -1,0 +1,52 @@
+﻿@model IEnumerable<SimpleBlog.Areas.admin.Models.User>
+
+<h1> Users</h1>
+
+    <div class="btn btn-toolbar">
+        <a href="@Url.Action("new")" class="btn btn-primary"> <i class="glyphicon glyphicon-plus"></i> Create User</a>
+    </div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Roles</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var user in Model)
+        {
+            <tr>
+                <td>@user.UserID</td>
+                <td>@user.Username</td>
+                <td>@user.Email</td>
+                <td>{todo}</td>
+                <td>
+                    <div class="btn-group btn">
+                        <a href="@Url.Action("edit", new { id=user.UserID})" class="btn btn-xs btn-primary">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            Edit
+                        </a>
+                        <a href="@Url.Action("resetPassword", new { id=user.UserID})" class="btn btn-xs btn-default">
+                            <i class="glyphicon glyphicon-lock"></i>
+                            Reset Password
+                        </a>
+                        <a href="@Url.Action("Delete", new {id=user.UserID})" class="btn btn-xs btn-danger" data-post="Are you sure you want to delete">
+                            <i class="glyphicon glyphicon-remove"></i>
+                            Delete
+                        </a>
+
+                    </div>
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
