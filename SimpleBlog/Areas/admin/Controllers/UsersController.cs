@@ -30,7 +30,7 @@ namespace SimpleBlog.Areas.admin.Controllers
             return View(new UsersNew { });
         }
 
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken]
         public ActionResult New(UsersNew form)
         {
             if (db.Users.Any(u => u.Username == form.Username))
@@ -79,7 +79,7 @@ namespace SimpleBlog.Areas.admin.Controllers
             });
         }
 
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Edit(UsersEdit form, int id)
         {
 
@@ -128,7 +128,7 @@ namespace SimpleBlog.Areas.admin.Controllers
             });
         }
 
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken]
         public ActionResult ResetPassword(int id, UsersResetPassword form)
         {
             var user = db.Users.Find(id);
@@ -156,7 +156,7 @@ namespace SimpleBlog.Areas.admin.Controllers
 
 
 
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
             var user = db.Users.Find(id);

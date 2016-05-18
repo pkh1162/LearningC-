@@ -16,7 +16,7 @@ namespace SimpleBlog.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Index(LoginIndex form, string returnUrl)
         {
             if (ModelState.IsValid)
