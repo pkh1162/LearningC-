@@ -14,8 +14,9 @@ namespace SimpleBlog.DAL
         {
         }
 
+       
         public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { get; set;  }
+        public DbSet<Role> Roles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) //This method just prevents tables names being pluralised in our database.
         {

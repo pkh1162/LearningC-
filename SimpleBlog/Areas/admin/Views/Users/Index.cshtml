@@ -18,13 +18,16 @@
     </thead>
 
     <tbody>
-        @foreach(var user in Model)
+        @foreach (var user in Model)
         {
             <tr>
                 <td>@user.UserID</td>
                 <td>@user.Username</td>
                 <td>@user.Email</td>
-                <td>{todo}</td>
+                <td>
+                  @string.Join(", ", user.Roles.Select(role => role.RoleName))
+
+                </td>
                 <td>
                     <div class="btn-group btn">
                         <a href="@Url.Action("edit", new { id=user.UserID})" class="btn btn-xs btn-primary">

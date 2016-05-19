@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SimpleBlog.Areas.admin.Models.Role>
+
+<h1> Roles</h1>
+
+<div class="btn btn-toolbar">
+    <a href="@Url.Action("new")" class="btn btn-primary"> <i class="glyphicon glyphicon-plus"></i> Create Role</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Role</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var role in Model)
+        {
+            <tr>
+                <td>@role.RoleID</td>
+                <td>@role.RoleName</td>
+
+                <td>
+                    <div class="btn-group btn">
+                        <a href="#" class="btn btn-xs btn-primary">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            Edit
+                        </a>
+                        <a href="#" class="btn btn-xs btn-default">
+                            <i class="glyphicon glyphicon-lock"></i>
+                            Change Privileges
+                        </a>
+                        <a href="#" class="btn btn-xs btn-danger" data-post="Are you sure you want to delete">
+                            <i class="glyphicon glyphicon-remove"></i>
+                            Delete
+                        </a>
+
+                    </div>
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>

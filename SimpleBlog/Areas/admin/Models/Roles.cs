@@ -8,6 +8,11 @@ namespace SimpleBlog.Areas.admin.Models
 {
     public class Role
     {
+        public Role()
+        {
+            Users = new List<User>();
+        }
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RoleID { get; set; }
         public string RoleName { get; set; }

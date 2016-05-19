@@ -29,6 +29,10 @@
             <li class="@Extensions.SelectedTabHelper(ViewBag.selectedTab, "users")">
                 @Html.ActionLink("Users", "Index", "Users", new { area = "admin"}, new { } )
             </li>
+            <li class="@Extensions.SelectedTabHelper(ViewBag.selectedTab, "roles")">
+                @Html.ActionLink("Roles", "Index", "Roles_", new { area = "admin" }, new { })
+            </li>
+
             <li>
                 @Html.RouteLink("Home", "HomePage")
             </li>

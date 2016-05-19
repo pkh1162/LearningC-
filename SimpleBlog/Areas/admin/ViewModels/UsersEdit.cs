@@ -7,7 +7,9 @@ using System.Web;
 namespace SimpleBlog.Areas.admin.ViewModels
 {
     public class UsersEdit
-    {
+    {       
+        public IList<RoleCheckBox> CheckBoxRoles { get; set; }
+
         [Required, MaxLength(128)]
         public string Username { get; set; }
 

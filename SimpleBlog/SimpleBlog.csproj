@@ -156,6 +156,8 @@
     <Content Include="Areas\admin\Views\Users\New.cshtml" />
     <Content Include="Areas\admin\Views\Users\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Users\ResetPassword.cshtml" />
+    <Content Include="Areas\admin\Views\Roles1\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Users\_RoleEditor.cshtml" />
     <None Include="scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\jquery-2.2.3.js" />
@@ -172,10 +174,12 @@
     <Compile Include="Areas\admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\admin\Controllers\RolesController.cs" />
+    <Compile Include="Areas\admin\Controllers\Roles1Controller.cs" />
     <Compile Include="Areas\admin\Controllers\TestController.cs" />
     <Compile Include="Areas\admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\admin\Models\Roles.cs" />
     <Compile Include="Areas\admin\Models\Users.cs" />
+    <Compile Include="Areas\admin\ViewModels\RoleCheckBox.cs" />
     <Compile Include="Areas\admin\ViewModels\UsersResetPassword.cs" />
     <Compile Include="Areas\admin\ViewModels\UsersEdit.cs" />
     <Compile Include="Areas\admin\ViewModels\UsersNew.cs" />
