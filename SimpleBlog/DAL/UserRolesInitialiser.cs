@@ -6,7 +6,7 @@ using System.Web;
 
 namespace SimpleBlog.DAL
 {
-    public class UserRoleInitialiser : System.Data.Entity.DropCreateDatabaseAlways<UserRoleContext>
+    public class UserRoleInitialiser : System.Data.Entity.DropCreateDatabaseIfModelChanges<UserRoleContext>
     {
 
         //DropCreateDatabaseIfModelChanges<UserRoleContext>
@@ -19,12 +19,12 @@ namespace SimpleBlog.DAL
 
             List<User> users = new List<User>
             {
-                new User { Username = "pkh1162", Email = "pop@hop.com", Password = "nope"},
-                new User { Username = "bob", Email = "too@hop.com", Password = "franc"},
-                new User { Username = "mary", Email = "djdh@hop.com", Password = "blizzrd"},
-                new User { Username = "Sue", Email = "dolly@hop.com", Password = "tango" },
-                new User { Username = "hue", Email = "polly@hop.com", Password = "tango" },
-                new User { Username = "Lue", Email = "popolly@hop.com", Password = "tango"}
+                new User { Username = "pkh1162", Email = "pop@hop.com", PasswordHash = "nope"},
+                new User { Username = "bob", Email = "too@hop.com", PasswordHash = "franc"},
+                new User { Username = "mary", Email = "djdh@hop.com", PasswordHash = "blizzrd"},
+                new User { Username = "Sue", Email = "dolly@hop.com", PasswordHash = "tango" },
+                new User { Username = "hue", Email = "polly@hop.com", PasswordHash = "tango" },
+                new User { Username = "Lue", Email = "popolly@hop.com", PasswordHash = "tango"}
 
 
             };

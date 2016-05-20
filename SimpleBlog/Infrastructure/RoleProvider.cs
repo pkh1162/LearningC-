@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleBlog.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,17 +8,40 @@ namespace SimpleBlog.Infrastructure
 {
     public class RoleProvider : System.Web.Security.RoleProvider
     {
+        private UserRoleContext db = new UserRoleContext();
 
         public override string[] GetRolesForUser(string username)
         {
-            if (username == "pkh1162")
+
+            return Auth.User.Roles.Select(r => r.RoleName).ToArray();
+
+
+            /*
+            var user = db.Users.FirstOrDefault(u => username == u.Username);
+            var roleArray = user.Roles.Select(r => r.RoleName).ToArray();
+            //return roleArray;
+            
+
+            if (roleArray.Contains("admin"))
             {
                 return new string[] { "admin" };
             }
-            else
+
+
+            else if (roleArray.Contains("author"))
             {
-                return new string[] { };
+                return new string[] { "author" };
             }
+            else if (roleArray.Contains("generaluser"))
+            {
+                return new string[] { "generalUser" };
+            }
+            else
+                return new string[] { };
+                */
+
+
+
         }
 
 
@@ -77,6 +101,13 @@ namespace SimpleBlog.Infrastructure
         public override bool RoleExists(string roleName)
         {
             throw new NotImplementedException();
+        }
+
+        public string[] RolesForUser(string username)
+        {
+            var user = db.Users.FirstOrDefault(u => username == u.Username);
+            var roleArray = user.Roles.Select(r => r.RoleName).ToArray();
+            return roleArray;
         }
     }
 }

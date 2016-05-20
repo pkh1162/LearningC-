@@ -1,4 +1,5 @@
-﻿using SimpleBlog.ViewModels;
+﻿using SimpleBlog.DAL;
+using SimpleBlog.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace SimpleBlog.Controllers
 {
     public class LoginController : Controller
     {
+
+        private UserRoleContext db = new UserRoleContext();
         // GET: Login
         public ActionResult Index()
         {
@@ -19,10 +22,22 @@ namespace SimpleBlog.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Index(LoginIndex form, string returnUrl)
         {
+            var user = db.Users.FirstOrDefault(u => u.Username == form.Username);
+
+            if (user == null)
+            {
+                SimpleBlog.Areas.admin.Models.User.FakeHash(); //Prevents timing attacks, see fakeHash declaration for more details.
+            }
+
+            if((user==null) || !user.CheckPassword(form.Password))
+            {
+                ModelState.AddModelError("Username", "Username or password is incorrect");
+            }
+
             if (ModelState.IsValid)
             {
 
-                FormsAuthentication.SetAuthCookie(form.Username, true);
+                FormsAuthentication.SetAuthCookie(user.Username, true);
 
                 if (!string.IsNullOrWhiteSpace(returnUrl))
                 {

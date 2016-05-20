@@ -27,13 +27,14 @@
         <h2>
             @if (User.Identity.IsAuthenticated)
             {
-                <p>Welcome back, @User.Identity.Name</p>
+                <p>Welcome back, @User.Identity.Name:   ROLES [@string.Join(", ", System.Web.Security.Roles.GetRolesForUser(User.Identity.Name))]</p>
                 <a href="@Url.RouteUrl("Logout")"> Logout</a>
 
                 if (User.IsInRole("admin"))
                 {
                     <a href="@Url.Action("Index","Home", new { area = "admin" })">Views stuff in admin</a>
                 }
+                
 
             }
             else

@@ -89,7 +89,7 @@ namespace SimpleBlog.Areas.admin.Controllers
             }
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////
            
-           var userRoleNames = user.Roles.Select(us => us.RoleName); //need this line here. See ProblemsEncountered.
+           var userRoleNames = user.Roles.Select(us => us.RoleName); //need this line here. See ProblemsEncountered.P
 
 
             //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -160,7 +160,7 @@ namespace SimpleBlog.Areas.admin.Controllers
             return View(new UsersResetPassword
             {
                 Username = user.Username,
-                Password = user.Password
+              //  Password = user.PasswordHash
             });
         }
 
@@ -173,18 +173,13 @@ namespace SimpleBlog.Areas.admin.Controllers
                 return HttpNotFound();
             }
 
-           // form.Username = user.Username;
-           // if (form.ConfirmPassword != form.Password)
-           // {
-           //     ModelState.AddModelError("Password", "Passwords must match");
-           // }
-
             if (!ModelState.IsValid)
             {
                 return View(form);
             }
 
-            user.Password = form.Password;
+            user.SetPassword(form.Password);
+            //user.PasswordHash = form.Password;
             db.Entry(user).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -221,6 +216,8 @@ namespace SimpleBlog.Areas.admin.Controllers
 
             foreach (var toRemove in roles.Where(t => !selectedRoles.Contains(t)).ToList()) //If roles(from user) does not contain selected roles,
                 roles.Remove(toRemove);                                               //add selectedRoles to roles(of user
+
+            db.SaveChanges();
         }
 
        
