@@ -12,7 +12,7 @@ namespace SimpleBlog.Infrastructure
 
         public override string[] GetRolesForUser(string username)
         {
-
+           
             return Auth.User.Roles.Select(r => r.RoleName).ToArray();
 
 

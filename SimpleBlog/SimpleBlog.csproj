@@ -162,6 +162,8 @@
     <Content Include="Areas\admin\Views\Users\ResetPassword.cshtml" />
     <Content Include="Areas\admin\Views\Roles1\Index.cshtml" />
     <Content Include="Areas\admin\Views\Users\_RoleEditor.cshtml" />
+    <Content Include="Areas\admin\Views\Posts\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Posts\Form.cshtml" />
     <None Include="scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\jquery-2.2.3.js" />
@@ -176,6 +178,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\admin\Controllers\PostsController.cs" />
     <Compile Include="Areas\admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\admin\Controllers\RolesController.cs" />
     <Compile Include="Areas\admin\Controllers\Roles1Controller.cs" />
@@ -198,10 +201,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Extensions.cs" />
+    <Compile Include="Infrastructure\PagedData.cs" />
     <Compile Include="Infrastructure\RoleProvider.cs" />
     <Compile Include="Infrastructure\SelectedTabAttribute.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\Tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\LoginVM.cs" />
+    <Compile Include="ViewModels\PostsVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -236,7 +243,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Logout\" />
   </ItemGroup>
   <PropertyGroup>

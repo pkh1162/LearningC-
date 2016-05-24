@@ -17,47 +17,50 @@
 
 </head>
 <body>
+    <div class="container">
 
-    <header>
-        <h1>
-        <a href= "@Url.RouteUrl("HomePage")">Home blog pages</a>
+        <header>
+            <h1>
+                <a href="@Url.RouteUrl("HomePage")">Home blog pages</a>
 
-        </h1>
+            </h1>
 
-        <h2>
-            @if (User.Identity.IsAuthenticated)
+            <h2>
+                @if (User.Identity.IsAuthenticated)
             {
-                <p>Welcome back, @User.Identity.Name:   ROLES [@string.Join(", ", System.Web.Security.Roles.GetRolesForUser(User.Identity.Name))]</p>
-                <a href="@Url.RouteUrl("Logout")"> Logout</a>
+                    <p>Welcome back, @User.Identity.Name:   ROLES [@string.Join(", ", System.Web.Security.Roles.GetRolesForUser(User.Identity.Name))]</p>
+                    <a href="@Url.RouteUrl("Logout")"> Logout</a>
 
-                if (User.IsInRole("admin"))
-                {
-                    <a href="@Url.Action("Index","Home", new { area = "admin" })">Views stuff in admin</a>
+                    if (User.IsInRole("admin"))
+                    {
+                        <a href="@Url.Action("Index","Home", new { area = "admin" })">Views stuff in admin</a>
+                    }
+
+
                 }
-                
+                else
+                {
+                    <a href="@Url.RouteUrl("LoginPage")"> Login</a>
+                }
+            </h2>
 
-            }
-            else
-            {
-                <a href="@Url.RouteUrl("LoginPage")"> Login</a>
-            }
-        </h2>
+            <h3>
+                @Html.RouteLink("Blog", "BlogPage")
+            </h3>
+        </header>
 
-        <h3>
-            @Html.RouteLink("Blog", "BlogPage")    
-        </h3>
-    </header>
+        <h4>
+            @RenderSection("Testing", false)
+        </h4>
+        @RenderBody()
 
-    <h4>
-        @RenderSection("Testing", false)
-    </h4>
-    @RenderBody()
+        <footer>
+            <text>PKH1162</text>
+            <i class="glyphicon glyphicon-knight"></i>
+        </footer>
 
-    <footer>
-        <text>PKH1162</text>
-        <i class="glyphicon glyphicon-knight"></i>
-    </footer>
+        @Scripts.Render("~/scripts")
 
-    @Scripts.Render("~/scripts")
+    </div>
 </body>
 </html>

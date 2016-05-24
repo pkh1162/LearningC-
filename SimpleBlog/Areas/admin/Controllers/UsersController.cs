@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace SimpleBlog.Areas.admin.Controllers
 {
-    [Authorize(Roles = "admin")]
+   // [Authorize(Roles = "admin")]
     [SelectedTabAttribute("users")]
     public class UsersController : Controller
     {

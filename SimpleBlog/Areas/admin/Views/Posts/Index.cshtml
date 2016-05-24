@@ -29,13 +29,13 @@
         @if (Model.Posts.HasNextPage)
         {
             <a href="@Url.Action("Index", new {page=Model.Posts.NextPage})" class="btn btn-primary btn-sm">
-                Next Page<i class="glyphicon glyphicon-chevron-right"></i> 
+                Next Page<i class="glyphicon glyphicon-chevron-right"></i>
             </a>
         }
         else
         {
             <a href="#" class="btn btn-default btn-disabled btn-sm">
-                Next Page <i class="glyphicon glyphicon-chevron-right"></i> 
+                Next Page <i class="glyphicon glyphicon-chevron-right"></i>
             </a>
         }
 
@@ -49,11 +49,12 @@
             <th>Author</th>
             <th>Tags</th>
             <th>Date</th>
+            <th>Id</th>
             <th>Actions</th>
-        </tr>                
+        </tr>
     </thead>
     <tbody>
-        @foreach(var post in Model.Posts)
+        @foreach (var post in Model.Posts)
         {
             var cls = "";
             if (post.IsDeleted)
@@ -66,8 +67,10 @@
                 <td>@post.PostingUsername</td>
                 <td>@string.Join(", ", post.Tags.Select(t => t.Name))</td>
                 <td>@post.CreatedAt</td>
+                <td>@post.PostID</td>
+
                 <td>
-                    <a href="@Url.Action("edit", new{post.PostID})" class="btn btn-xs btn-primary">
+                    <a href="@Url.Action("edit", new{id=post.PostID})" class="btn btn-xs btn-primary">
                         <i class="glyphicon glyphicon-edit"></i> Edit
                     </a>
 

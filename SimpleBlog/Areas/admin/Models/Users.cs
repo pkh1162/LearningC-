@@ -30,6 +30,7 @@ namespace SimpleBlog.Areas.admin.Models
 
         public bool CheckPassword(string password)
         {
+            
             return BCrypt.Net.BCrypt.Verify(password, PasswordHash);
         }
 
