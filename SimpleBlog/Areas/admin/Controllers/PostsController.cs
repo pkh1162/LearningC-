@@ -71,7 +71,7 @@ namespace SimpleBlog.Areas.Admin.Controllers
             {
                 post = new Post
                 {
-                    CreatedAt = DateTime.Now,
+                    CreatedAt = DateTime.UtcNow,
                   //  User = user2,
                     PostingUsername = User.Identity.Name
                  
@@ -133,6 +133,55 @@ namespace SimpleBlog.Areas.Admin.Controllers
                 
             });
         }
+
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult Trash(int id)
+        {
+            var post = db.Posts.Find(id);
+            if (post == null)
+            {
+                return HttpNotFound();
+            }
+
+            post.DeletedAt = DateTime.UtcNow;
+            db.Entry(post).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult Delete(int id)
+        {
+            var post = db.Posts.Find(id);
+
+            if (post == null)
+            {
+                return HttpNotFound();
+            }
+
+            db.Posts.Remove(post);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+
+        }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult Restore(int id)
+        {
+            var post = db.Posts.Find(id);
+            if (post == null)
+                return HttpNotFound();
+
+            post.DeletedAt = null;
+            db.Entry(post).State = EntityState.Modified;
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
 
     }
 }
