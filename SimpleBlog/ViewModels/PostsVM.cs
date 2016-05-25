@@ -8,6 +8,14 @@ using System.Web;
 
 namespace SimpleBlog.ViewModels
 {
+    public class TagCheckBox
+    {
+        public int? Id { get; set; }
+        public string Name { get; set; }
+        public bool IsChecked { get; set; }
+    }
+
+
     public class BlogIndex //Convention: [Controller name][Action name]
     {
         public PagedData<Post> Posts { get; set; }
@@ -28,6 +36,8 @@ namespace SimpleBlog.ViewModels
 
         [Required, DataType(DataType.MultilineText)]
         public string Content { get; set; }
+
+        public IList<TagCheckBox> Tags { get; set; }
 
 
     }

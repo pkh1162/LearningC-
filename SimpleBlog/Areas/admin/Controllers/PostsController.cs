@@ -43,7 +43,13 @@ namespace SimpleBlog.Areas.Admin.Controllers
         {
             return View("Form", new PostForms()     //Return View called form, with the PostForm view model data types attached.
             {
-                IsNew = true
+                IsNew = true,
+                Tags = db.Tags.Select(tag => new TagCheckBox
+                {
+                    Id = tag.TagID,
+                    Name = tag.Name,
+                    IsChecked = false
+                }).ToList()               
             });
         }
 
@@ -56,6 +62,8 @@ namespace SimpleBlog.Areas.Admin.Controllers
             {
                 return View(form);
             }
+
+            var selectedTags = ReconcileTags(form.Tags);
 
             Post post;
 
@@ -73,9 +81,11 @@ namespace SimpleBlog.Areas.Admin.Controllers
                 {
                     CreatedAt = DateTime.UtcNow,
                   //  User = user2,
-                    PostingUsername = User.Identity.Name
-                 
+                    PostingUsername = User.Identity.Name                 
                 };
+
+                foreach (var tag in selectedTags)
+                    post.Tags.Add(tag);
             }
             else
             {
@@ -85,6 +95,12 @@ namespace SimpleBlog.Areas.Admin.Controllers
                     return HttpNotFound();
 
                 post.UpdatedAt = DateTime.UtcNow;
+
+                foreach (var toAdd in selectedTags.Where(t => !post.Tags.Contains(t)))
+                    post.Tags.Add(toAdd);
+
+                foreach (var toRemove in post.Tags.Where(t => !selectedTags.Contains(t)).ToList())
+                    post.Tags.Remove(toRemove);
             }
 
             post.Title = form.Title;
@@ -120,7 +136,11 @@ namespace SimpleBlog.Areas.Admin.Controllers
 
             if (post == null)
                 return RedirectToAction("Index");
-            
+
+
+            ///////////////////////////////////
+            var postTagNames = post.Tags.Select(pt => pt.Name); 
+            ///////////////////////////////////
 
             return View("form", new PostForms
             {
@@ -129,9 +149,16 @@ namespace SimpleBlog.Areas.Admin.Controllers
                 Content = post.Content,
                 Slug = post.Slug,
                 Title = post.Title,
-                Author = post.PostingUsername
-                
-            });
+                Author = post.PostingUsername,
+                Tags = db.Tags.Select(tag => new TagCheckBox
+                {
+                    Id = tag.TagID,
+                    Name = tag.Name,
+                    IsChecked = postTagNames.Contains(tag.Name)
+//                  IsChecked = (post.Tags.Contains(tag))           :/See problems encountered. same issue as problem one.
+                }).ToList()
+
+    });
         }
 
 
@@ -180,6 +207,40 @@ namespace SimpleBlog.Areas.Admin.Controllers
             db.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+
+
+        public IEnumerable<Tag> ReconcileTags(IEnumerable<TagCheckBox> tags)
+        {
+            foreach (var tag in tags.Where(t => t.IsChecked))
+            {
+
+                if (tag.Id != null)
+                {
+                    yield return db.Tags.Find(tag.Id);
+                    continue;
+                }
+
+                var existingTag = db.Tags.FirstOrDefault(u => u.Name == tag.Name);
+                if (existingTag != null)
+                {
+                    yield return existingTag;
+                    continue;
+                }
+
+                var newTag = new Tag
+                {
+                    Name = tag.Name,
+                    Slug = tag.Name.Slugify()
+                };
+
+                db.Tags.Add(newTag);
+                db.SaveChanges();
+
+                yield return newTag;
+          }
+
         }
 
 

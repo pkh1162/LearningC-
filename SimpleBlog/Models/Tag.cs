@@ -8,6 +8,12 @@ namespace SimpleBlog.Models
 {
     public class Tag
     {
+
+        public Tag()
+        {
+            Posts = new List<Post>();
+        }
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TagID { get; set; }
         public string Slug { get; set; }

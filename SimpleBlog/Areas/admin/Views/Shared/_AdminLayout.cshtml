@@ -53,6 +53,8 @@
 
     </div>
     @Scripts.Render("~/admin/scripts")
+    @RenderSection("ScriptsOne", false)
+    
 
     <form class="hidden" id="anti-forgery-form">
         @Html.AntiForgeryToken()

@@ -9,6 +9,12 @@ namespace SimpleBlog.Models
 {
     public class Post
     {
+
+        public Post()
+        {
+            Tags = new List<Tag>();
+        }
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PostID { get; set; }
         public string PostingUsername { get; set; }

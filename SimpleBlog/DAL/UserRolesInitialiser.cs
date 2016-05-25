@@ -15,7 +15,13 @@ namespace SimpleBlog.DAL
         protected override void Seed(UserRoleContext context)
         {
 
+            List<Tag> tags = new List<Tag>
+            {
+                new Tag {Name = "design", Slug = "dddd"  }
+            };
 
+            tags.ForEach(t => context.Tags.Add(t));
+            context.SaveChanges();
            
 
             List<User> users = new List<User>
