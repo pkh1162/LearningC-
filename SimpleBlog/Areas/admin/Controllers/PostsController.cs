@@ -27,10 +27,11 @@ namespace SimpleBlog.Areas.Admin.Controllers
             var totalPostCount = db.Posts.Count();
 
             var currentPostsPage = db.Posts              //Lists posts by creation date, finds current page("page")                                                 
-                .OrderByDescending(p => p.CreatedAt)    //and minuses 1. Skips this ammount multiplied by posts per page.                                                         
+                .OrderByDescending(p => p.CreatedAt)
+                .Include(f => f.Tags)                   //and minuses 1. Skips this ammount multiplied by posts per page.                                                         
                 .Skip((page - 1) * PostsPerPage)        //Takes posts from there and converts it to a list. This returns the 
                 .Take(PostsPerPage)                     //posts on the current page numebr you are on.
-                .ToList();
+                .ToList();                              //The include line is important here, see problems encountered.
 
             return View(new BlogIndex
             {
