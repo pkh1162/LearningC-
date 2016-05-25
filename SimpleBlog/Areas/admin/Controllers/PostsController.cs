@@ -54,7 +54,7 @@ namespace SimpleBlog.Areas.Admin.Controllers
             });
         }
 
-        [HttpPost, ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken, ValidateInput(false)]
         public ActionResult Form(PostForms form)
         {
             form.IsNew = (form.BlogPostId == null);     //determines whether there is a post id (ie. is the post new or not)
