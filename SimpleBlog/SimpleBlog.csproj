@@ -445,6 +445,7 @@
     <Compile Include="Areas\admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\admin\Models\Roles.cs" />
     <Compile Include="Areas\admin\Models\Users.cs" />
+    <Compile Include="Areas\admin\ViewModels\Posts.cs" />
     <Compile Include="Areas\admin\ViewModels\RoleCheckBox.cs" />
     <Compile Include="Areas\admin\ViewModels\UsersResetPassword.cs" />
     <Compile Include="Areas\admin\ViewModels\UsersEdit.cs" />
@@ -493,6 +494,10 @@
     <Content Include="Content\Fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="scripts\jquery-2.2.3.min.map" />
+    <Content Include="Views\Blog\_Blog.cshtml" />
+    <Content Include="Views\Blog\_BlogPost.cshtml" />
+    <Content Include="Views\Blog\Show.cshtml" />
+    <Content Include="Views\Blog\Tag.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

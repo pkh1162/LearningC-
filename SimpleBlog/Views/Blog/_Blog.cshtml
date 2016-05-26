@@ -1,0 +1,33 @@
+﻿@model SimpleBlog.Infrastructure.PagedData<SimpleBlog.Models.Post>
+
+<div style="padding-bottom: 40px">
+    @foreach (var post in Model)
+    {
+        @Html.Partial("_BlogPost", post)
+    }
+</div>
+ 
+<ul class="list-unstyled">
+    @if (Model.HasPreviousPage)
+    {
+        <li class="pull-left">
+            <a href="@Url.Action(null, new {page=Model.PreviousPage})" class="btn btn-primary">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Newer posts
+            </a>
+        </li>
+    }
+
+    @if (Model.HasNextPage)
+    {
+        <li class="pull-right">
+            <a href="@Url.Action(null, new {page=Model.NextPage})" class="btn btn-primary">
+                Older posts
+                <i class="glyphicon glyphicon-chevron-right"></i>
+            </a>
+        </li>
+    }
+
+</ul>
+     
+

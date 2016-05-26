@@ -63,6 +63,35 @@ namespace SimpleBlog
             );
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            routes.MapRoute(
+                name: "RealPost",
+                url: "post/Show/{idAndSlug}",
+                defaults: new { controller = "Blog", action = "Show", id = UrlParameter.Optional },
+                namespaces: nsControllersMain);
+
+            routes.MapRoute(
+                name: "Post", 
+                url: "post/Show/{id}/{slug}",
+                defaults: new { controller = "Blog", action = "Show", id = UrlParameter.Optional },
+                namespaces: nsControllersMain);
+
+            routes.MapRoute(
+                name: "Tag",
+                url: "post/Tag/{id}/{slug}",
+                defaults: new { controller = "Blog", action = "Tag", id = UrlParameter.Optional },
+                namespaces: nsControllersMain);
+
+          
+
+           // routes.MapRoute("Tag1", "tag/{id}-{slug}", new { controller = "Blog", action = "Tag" }, nsControllersMain);
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////

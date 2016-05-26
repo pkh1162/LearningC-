@@ -34,3 +34,111 @@ System.Reflection.TargetInvocationException: Exception has been thrown by the ta
 2016-05-25 17:02:06,055 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - License expiration date is 06/09/2016 18:35:46
 2016-05-25 17:02:06,299 [1] DEBUG Rhino.Licensing.AbstractLicenseValidator [(null)] - License accepted for EntityFramework Profiler
 2016-05-25 17:02:06,342 [9] INFO  HibernatingRhinos.Profiler.Client.Infrastructure.AutoUpdate.ProfilerAutoUpdate [(null)] - Checking for updates...
+2016-05-26 15:50:28,069 [41] DEBUG Rhino.Licensing.SntpClient [(null)] - Could not get time from: time.nist.gov
+System.Net.Sockets.SocketException (0x80004005): No such host is known
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Rhino.Licensing.SntpClient.<GetDateAsync>d__a.MoveNext()
+2016-05-26 15:50:28,696 [41] DEBUG Rhino.Licensing.SntpClient [(null)] - Could not get time from: time-nw.nist.gov
+System.Net.Sockets.SocketException (0x80004005): No such host is known
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Rhino.Licensing.SntpClient.<GetDateAsync>d__a.MoveNext()
+2016-05-26 15:50:28,790 [41] DEBUG Rhino.Licensing.SntpClient [(null)] - Could not get time from: time-a.nist.gov
+System.Net.Sockets.SocketException (0x80004005): No such host is known
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Rhino.Licensing.SntpClient.<GetDateAsync>d__a.MoveNext()
+2016-05-26 15:50:29,021 [41] DEBUG Rhino.Licensing.SntpClient [(null)] - Could not get time from: time-b.nist.gov
+System.Net.Sockets.SocketException (0x80004005): No such host is known
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Rhino.Licensing.SntpClient.<GetDateAsync>d__a.MoveNext()
+2016-05-26 15:50:29,430 [41] DEBUG Rhino.Licensing.SntpClient [(null)] - Could not get time from: time-a.timefreq.bldrdoc.gov
+System.Net.Sockets.SocketException (0x80004005): No such host is known
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Rhino.Licensing.SntpClient.<GetDateAsync>d__a.MoveNext()
+2016-05-26 15:50:29,612 [41] DEBUG Rhino.Licensing.SntpClient [(null)] - Could not get time from: time-b.timefreq.bldrdoc.gov
+System.Net.Sockets.SocketException (0x80004005): No such host is known
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Rhino.Licensing.SntpClient.<GetDateAsync>d__a.MoveNext()
+2016-05-26 15:50:30,045 [41] DEBUG Rhino.Licensing.SntpClient [(null)] - Could not get time from: time-c.timefreq.bldrdoc.gov
+System.Net.Sockets.SocketException (0x80004005): No such host is known
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Rhino.Licensing.SntpClient.<GetDateAsync>d__a.MoveNext()
+2016-05-26 15:50:30,261 [41] DEBUG Rhino.Licensing.SntpClient [(null)] - Could not get time from: utcnist.colorado.edu
+System.Net.Sockets.SocketException (0x80004005): No such host is known
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Rhino.Licensing.SntpClient.<GetDateAsync>d__a.MoveNext()
+2016-05-26 15:50:30,517 [41] DEBUG Rhino.Licensing.SntpClient [(null)] - Could not get time from: nist1.datum.com
+System.Net.Sockets.SocketException (0x80004005): No such host is known
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Rhino.Licensing.SntpClient.<GetDateAsync>d__a.MoveNext()
+2016-05-26 15:50:30,637 [41] DEBUG Rhino.Licensing.SntpClient [(null)] - Could not get time from: nist1.dc.certifiedtime.com
+System.Net.Sockets.SocketException (0x80004005): No such host is known
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Rhino.Licensing.SntpClient.<GetDateAsync>d__a.MoveNext()
+2016-05-26 15:50:30,641 [41] DEBUG Rhino.Licensing.SntpClient [(null)] - Could not get time from: nist1.nyc.certifiedtime.com
+System.Net.Sockets.SocketException (0x80004005): No such host is known
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Rhino.Licensing.SntpClient.<GetDateAsync>d__a.MoveNext()
+2016-05-26 15:50:30,695 [41] DEBUG Rhino.Licensing.SntpClient [(null)] - Could not get time from: nist1.sjc.certifiedtime.com
+System.Net.Sockets.SocketException (0x80004005): No such host is known
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Rhino.Licensing.SntpClient.<GetDateAsync>d__a.MoveNext()

@@ -1,4 +1,5 @@
 ﻿using SimpleBlog.Areas.admin.Models;
+using SimpleBlog.Areas.admin.ViewModels;
 using SimpleBlog.DAL;
 using SimpleBlog.Infrastructure;
 using SimpleBlog.Models;
