@@ -118,6 +118,17 @@ namespace SimpleBlog
             );
 
 
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            routes.MapRoute(
+           name: "Sidebar",
+           url: "",
+           defaults: new { controller = "Layout", action = "Sidebar", id = UrlParameter.Optional },
+           namespaces: nsControllersMain
+           );
+
+
+
 
 
         }

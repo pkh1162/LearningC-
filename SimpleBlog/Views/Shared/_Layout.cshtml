@@ -10,24 +10,23 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width" charset="utf-8" />
     <title>@ViewBag.Title</title>
 
     @Styles.Render("~/styles")
-
 </head>
+
 <body>
-    <div class="container">
-
-        <header>
-            <h1>
+    <div class="site-header">
+        <header class="container">
+            <h1 class="page-header">
                 <a href="@Url.RouteUrl("HomePage")">Home blog pages</a>
-
+                <small>a simple blog powered by asp.net mvc</small>
             </h1>
 
-            <h2>
+            
                 @if (User.Identity.IsAuthenticated)
-            {
+                {
                     <p>Welcome back, @User.Identity.Name:   ROLES [@string.Join(", ", System.Web.Security.Roles.GetRolesForUser(User.Identity.Name))]</p>
                     <a href="@Url.RouteUrl("Logout")"> Logout</a>
 
@@ -42,25 +41,29 @@
                 {
                     <a href="@Url.RouteUrl("LoginPage")"> Login</a>
                 }
-            </h2>
+            
 
-            <h3>
+            
                 @Html.RouteLink("Blog", "BlogPage")
-            </h3>
+            
         </header>
-
-        <h4>
-            @RenderSection("Testing", false)
-        </h4>
-        @RenderBody()
-
-        <footer>
-            <text>PKH1162</text>
-            <i class="glyphicon glyphicon-knight"></i>
-        </footer>
-
-        @Scripts.Render("~/scripts")
-
     </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                @RenderBody()
+            </div>
+            <div class="col-lg-4 sidebar">
+               @Html.Action("Sidebar", "Layout")
+            </div>
+        </div>
+        <footer>
+           &copy; @DateTime.UtcNow.Year
+        </footer>
+    </div>
+           
+
+        @Scripts.Render("~/scripts")   
 </body>
 </html>

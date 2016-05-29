@@ -427,6 +427,7 @@
     <Content Include="scripts\jquery-2.2.3.js" />
     <Content Include="scripts\jquery-2.2.3.min.js" />
     <None Include="scripts\jquery.validate-vsdoc.js" />
+    <Content Include="scripts\jquery.timeago.js" />
     <Content Include="scripts\jquery.validate.js" />
     <Content Include="scripts\jquery.validate.min.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.js" />
@@ -453,6 +454,7 @@
     <Compile Include="Auth.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="DAL\UserRoleContext.cs" />
@@ -467,6 +469,8 @@
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="scripts\Frontend.js" />
+    <Compile Include="ViewModels\LayoutVM.cs" />
     <Compile Include="ViewModels\LoginVM.cs" />
     <Compile Include="ViewModels\PostsVM.cs" />
   </ItemGroup>
@@ -498,6 +502,7 @@
     <Content Include="Views\Blog\_BlogPost.cshtml" />
     <Content Include="Views\Blog\Show.cshtml" />
     <Content Include="Views\Blog\Tag.cshtml" />
+    <Content Include="Views\Layout\Sidebar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
